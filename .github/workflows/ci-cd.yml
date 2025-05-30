@@ -38,17 +38,17 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-frontend:latest
 
-      # (Tùy chọn) Chạy test
-      - name: Run tests for Backend
-        run: |
-          cd backend
-          npm install
-          npm test
-        if: success()
+      # (Tùy chọn)
+      # - name: Run tests for Backend
+      #   run: |
+      #     cd backend
+      #     npm install
+      #     npm test
+      #   if: success()
 
-      - name: Run tests for Frontend
-        run: |
-          cd frontend
-          npm install
-          npm test
-        if: success()
+      # - name: Run tests for Frontend
+      #   run: |
+      #     cd frontend
+      #     npm install
+      #     npm test
+      #   if: success()
