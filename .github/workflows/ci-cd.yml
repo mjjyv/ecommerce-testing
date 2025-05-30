@@ -13,18 +13,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout mã nguồn
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Đăng nhập Docker Hub
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # Build và đẩy backend image
       - name: Build and push Backend Docker image
         uses: docker/build-push-action@v4
         with:
@@ -33,7 +30,6 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/ecommerce-backend:latest
 
-      # Build và đẩy frontend image
       - name: Build and push Frontend Docker image
         uses: docker/build-push-action@v4
         with:
