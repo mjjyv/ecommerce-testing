@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+  frontend:
+    image: givoka/ecommerce-frontend:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+
+  backend:
+    image: givoka/ecommerce-backend:latest
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=development
